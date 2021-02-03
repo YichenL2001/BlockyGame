@@ -3,30 +3,31 @@ Blocky is a game with simple moves on a simple structure. But, like a Rubik’s 
 ![blocky](assert/levels-5.jpg)
 
 Each player has their own goal that they are working towards, such as creating the largest connected “blob” of blue. After each move, the player sees their score, which is determined by how well they have achieved their goal and which moves they have made. The game continues for a certain number of turns, and the player with the highest score at the end is the winner. Next, let’s look in more detail at the rules of the game and the different ways it can be configured for play.
-The Blocky board and terminology
+
+## The Blocky board and terminology
 
 We call the game board a ‘block’, which is best defined recursively. A block is either:
 
-a square of one colour, or
-a square that is subdivided into 4 equal-sized blocks.
-The largest block of all, containing the whole structure, is called the top-level block. We say that the top-level block is at level 0. If the top-level block is subdivided, we say that its four sub-blocks are at level 1. More generally, if a block at level k is subdivided, its four sub-blocks are at level k+1.
+- a square of one colour, or
+- a square that is subdivided into 4 equal-sized blocks.
+- The largest block of all, containing the whole structure, is called the top-level block. We say that the top-level block is at level 0. If the top-level block is subdivided, we say that its four sub-blocks are at level 1. More generally, if a block at level k is subdivided, its four sub-blocks are at level k+1.
 
 A Blocky board has a maximum allowed depth, which is the number of levels down it can go. A board with maximum allowed depth 0 would not be fun to play on – it couldn’t be subdivided beyond the top level, meaning that it would be of one solid colour. This board was generated with maximum depth of 5:
 ![blocky](assert/levels-5.jpg)
 For scoring, the units of measure are squares the size of the blocks at the maximum allowed depth. We will call these blocks unit cells.
 
-Actions and Moves
+## Actions and Moves
 
 A number of actions can be performed in Blocky. A move is an action that is performed on a specific block. The actions are:
 
-Rotate clockwise
-Rotate counterclockwise
-Swap Horizontally
-Swap Vertically
-Smash
-Paint
-Combine
-Pass
+- Rotate clockwise
+- Rotate counterclockwise
+- Swap Horizontally
+- Swap Vertically
+- Smash
+- Paint
+- Combine
+- Pass
 The Smash action can only be performed on blocks with no children. If a block is smashed, then it is sub-divided into four new, randomly-generated sub-blocks. Smashing a unit cell is also not allowed (it is already at the maximum depth).
 
 The Paint action sets a block’s colour to a new, specified colour. It can only be performed on unit cells.
@@ -35,15 +36,15 @@ The Combine action turns a block into a leaf based on the majority colour of its
 
 The Pass action does not mutate the block. It can be used by a player who wishes to skip their turn.
 
-Players
+## Players
 
 The game can be played solitaire (with a single player) or with two to four players. There are three kinds of players:
 
-A human player chooses moves based on user input.
-A random player is a computer player that, as the name implies, chooses moves randomly.
-A smart player is a computer player that chooses moves more intelligently: It generates a set of random moves and, for each move, checks what its score would be if it were to make that move. Then it picks the one that yields the best score.
+- A human player chooses moves based on user input.
+- A random player is a computer player that, as the name implies, chooses moves randomly.
+- A smart player is a computer player that chooses moves more intelligently: It generates a set of random moves and, for each move, checks what its score would be if it were to make that move. Then it picks the one that yields the best score.
 
-Goals and scoring
+## Goals and scoring
 
 At the beginning of the game, each player is assigned a randomly-generated goal. There are two types of goal:
 
@@ -55,16 +56,16 @@ Notice that both goals are relative to a particular colour. We will call that th
 
 In addition to the points gained by the player from achieving their goal, a player can also lose points based on the actions they perform.
 
-Rotating, Swapping, and Passing cost 0 points.
-Painting and Combining cost 1 point each time they are performed.
-Smashing costs 3 points each time it is performed.
-Configurations of the game
+- Rotating, Swapping, and Passing cost 0 points.
+- Painting and Combining cost 1 point each time they are performed.
+- Smashing costs 3 points each time it is performed.
+## Configurations of the game
 A Blocky game can be configured in several ways:
 
-Maximum allowed depth. 
-While the specific colour pattern for the board is randomly generated, we control how finely subdivided the squares can be.
-Number and type of players. 
-There can be any number of players of each type. The “difficulty” of a smart player (how hard it is to play against) can also be configured.
-Number of moves. 
-A game can be configured to run for any desired number of moves. (A game will end early if any player closes the game window.)
+- Maximum allowed depth. 
+- While the specific colour pattern for the board is randomly generated, we control how finely subdivided the squares can be.
+- Number and type of players. 
+- There can be any number of players of each type. The “difficulty” of a smart player (how hard it is to play against) can also be configured.
+- Number of moves. 
+- A game can be configured to run for any desired number of moves. (A game will end early if any player closes the game window.)
 
