@@ -1,6 +1,7 @@
 # BlockyGame
 Blocky is a game with simple moves on a simple structure. But, like a Rubik’s Cube, it is quite challenging to play. The game is played on a randomly-generated game board made of squares of four different colours, such as this:
-![blocky](assert/levels-5.jpg)
+
+<img src="assert/levels-5.jpg" width="200" height="200">
 
 Each player has their own goal that they are working towards, such as creating the largest connected “blob” of blue. After each move, the player sees their score, which is determined by how well they have achieved their goal and which moves they have made. The game continues for a certain number of turns, and the player with the highest score at the end is the winner. Next, let’s look in more detail at the rules of the game and the different ways it can be configured for play.
 
@@ -13,7 +14,9 @@ We call the game board a ‘block’, which is best defined recursively. A block
 - The largest block of all, containing the whole structure, is called the top-level block. We say that the top-level block is at level 0. If the top-level block is subdivided, we say that its four sub-blocks are at level 1. More generally, if a block at level k is subdivided, its four sub-blocks are at level k+1.
 
 A Blocky board has a maximum allowed depth, which is the number of levels down it can go. A board with maximum allowed depth 0 would not be fun to play on – it couldn’t be subdivided beyond the top level, meaning that it would be of one solid colour. This board was generated with maximum depth of 5:
-![blocky](assert/levels-5.jpg)
+
+<img src="assert/levels-5.jpg" width="200" height="200">
+
 For scoring, the units of measure are squares the size of the blocks at the maximum allowed depth. We will call these blocks unit cells.
 
 ## Actions and Moves
